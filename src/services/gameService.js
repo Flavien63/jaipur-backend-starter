@@ -80,6 +80,7 @@ export function createGame(name) {
     isDone: false,
   }
 
+  game.id = databaseService.getGames().length + 1
   game.market.concat(drawCards(game._deck, 2))
   game._players[0].concat(drawCards(game._deck, 5))
   putCamelsFromHandToHerd(game)
